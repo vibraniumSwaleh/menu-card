@@ -57,12 +57,34 @@ function App() {
   );
 }
 
-function Pizza() {
+function Menu() {
+  return (
+    <main className='menu'>
+      <h2>Our Menu</h2>
+      <Pizza
+        name='Pizza Spinachi'
+        ingredients='Tomato, mozerella, spinach and ricotta cheese'
+        photoName='/pizzas/spinaci.jpg'
+        price={10}
+      />
+
+      <Pizza
+        name='Pizza Spinachi'
+        ingredients='Tomato, mozerella, spinach and ricotta cheese'
+        photoName='/pizzas/spinaci.jpg'
+        price={20}
+      />
+    </main>
+  );
+}
+
+function Pizza(props) {
   return (
     <div>
-      <img src='/pizzas/spinaci.jpg' alt='Pizza spinachi' />
-      <h3>Pizza Spinachi</h3>
-      <p>Tomato, mozerella, spinach and ricotta cheese</p>
+      <img src={props.photoName} alt={props.name} />
+      <h3>{props.name}</h3>
+      <p>{props.ingredients}</p>
+      <p>{props.price}</p>
     </div>
   );
 }
@@ -72,18 +94,6 @@ function Header() {
     <header className='header'>
       <h1>Pizza Point Co.</h1>
     </header>
-  );
-}
-
-function Menu() {
-  return (
-    <main className='menu'>
-      <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
-    </main>
   );
 }
 
